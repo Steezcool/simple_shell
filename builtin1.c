@@ -1,7 +1,7 @@
 #include "shell.h"
 /**
  * _myalias - Replicates the functionality of the alias builtin (see man alias)
- * @info: A structure that holds potential arguments and maintains a consistent function prototype
+ * @info: A structure that holds potential argument
  * Return: Always returns 0
  */
 int _myalias(info_t *info)
@@ -9,6 +9,7 @@ int _myalias(info_t *info)
 	int i = 0;
 	char *p = NULL;
 	list_t *node = NULL;
+
 	if (info->argc == 1)
 	{
 	node = info->alias;
@@ -38,6 +39,7 @@ int _myalias(info_t *info)
 int set_alias(info_t *info, char *str)
 {
 	char *p;
+
 	p = _strchr(str, '=');
 	if (!p)
 	return (1);
@@ -54,6 +56,7 @@ int set_alias(info_t *info, char *str)
 int print_alias(list_t *node)
 {
 	char *p = NULL, *a = NULL;
+
 	if (node)
 	{
 	p = _strchr(node->str, '=');
@@ -67,8 +70,8 @@ int print_alias(list_t *node)
 	return (1);
 }
 /**
- * _myhistory - Displays the history list, presenting each command on a separate line along with matching line numbers, beginning from 0.
- * @info: A structure that holds potential arguments and maintains a consistent function prototype
+ * _myhistory - Displays the history list
+ * @info: A structure that holds potential arguments
  *  Return: Always returns 0
  */
 int _myhistory(info_t *info)
@@ -86,6 +89,7 @@ int unset_alias(info_t *info, char *str)
 {
 	char *p, c;
 	int ret;
+
 	p = _strchr(str, '=');
 	if (!p)
 	return (1);
