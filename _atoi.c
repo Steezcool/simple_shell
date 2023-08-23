@@ -2,7 +2,7 @@
 /**
  * interactive - this funtion responds with true
  * @info: this shows the struct address
- * Return: 1 if shell is in interactive mode, and 0 if not interactive
+ * Return: 1 if shell is interactive mode, and 0 if not interactive
  */
 int interactive(info_t *info)
 {
