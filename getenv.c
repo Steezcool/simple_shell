@@ -1,7 +1,7 @@
 #include "shell.h"
 /**
- * _setenv - This function Initializes a new environment variable or modifies an existing one
- * @info: A structure holding possible arguments, ensuring a consistent function prototype
+ * _setenv - Initializes a new environment variable
+ * @info: A structure holding possible arguments
  * @var: The string representing the environment variable property
  * @value: The string representing the environment variable value
  * Return: Always returns 0
@@ -11,6 +11,7 @@ int _setenv(info_t *info, char *var, char *value)
 	char *buf = NULL;
 	list_t *node;
 	char *p;
+
 	if (!var || !value)
 	return (0);
 	buf = malloc(_strlen(var) + _strlen(value) + 2);
@@ -39,7 +40,7 @@ int _setenv(info_t *info, char *var, char *value)
 }
 /**
  * get_environ - Returns a copy of the string array 'environ'
- * @info: A structure holding potential arguments, ensuring a consistent function prototype
+ * @info: A structure holding potential arguments
  * Return: Always returns 0
  */
 char **get_environ(info_t *info)
@@ -53,7 +54,7 @@ char **get_environ(info_t *info)
 }
 /**
  * _unsetenv - Deletes an environment variable
- * @info: A structure holding possible arguments, ensuring a consistent function prototype
+ * @info: A structure holding possible arguments
  * @var: The string representing the environment variable property
  * Return: 1 on successful deletion, 0 otherwise
  */
@@ -62,6 +63,7 @@ int _unsetenv(info_t *info, char *var)
 	list_t *node = info->env;
 	size_t i = 0;
 	char *p;
+
 	if (!node || !var)
 	return (0);
 	while (node)
