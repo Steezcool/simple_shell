@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * interactive - this funtion responds with true if shell is in the interactive mode
+ * interactive - this funtion responds with true
  * @info: this shows the struct address
  * Return: 1 if shell is in interactive mode, and 0 if not interactive
  */
@@ -11,7 +11,7 @@ int interactive(info_t *info)
 /**
  * _isalpha - this function checks alphabet characters
  * @c: inputed character
- * Return: 1 if c is an alphabet character, and 0 if not 
+ * Return: 1 if c is an alphabet character, and 0 if not
  */
 
 int _isalpha(int c)
@@ -24,13 +24,14 @@ int _isalpha(int c)
 /**
  * _atoi - this funtion to convert strings to integers
  * @s: this represents a string that must be converted
- * Return: 0 if theres no numbers in the string, otherwise show converted number
+ * Return: 0 if theres no numbers in the string
  */
 
 int _atoi(char *s)
 {
 	int i, sign = 1, flag = 0, output;
 	unsigned int result = 0;
+
 	for (i = 0; s[i] != '\0' && flag != 2; i++)
 	{
 	if (s[i] == '-')
