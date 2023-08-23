@@ -13,7 +13,7 @@ char *convert_number(long int num, int base, int flags)
 	char sign = 0;
 	char *ptr;
 	unsigned long n = num;
-	
+
 	if (!(flags & CONVERT_UNSIGNED) && num < 0)
 	{
 	n = -num;
@@ -42,7 +42,7 @@ int print_d(int input, int fd)
 	int (*__putchar)(char) = _putchar;
 	int i, count = 0;
 unsigned int _abs_, current;
-	
+
 	if (fd == STDERR_FILENO)
 	__putchar = _eputchar;
 	if (input < 0)
@@ -72,7 +72,7 @@ unsigned int _abs_, current;
  * print_error - Outputs an error message
  * @info: The parameter and return information structure
  * @estr: String containing the specified error type
- * Return: return 0 if no numbers are present in the string, otherwise the converted number
+ * Return: return 0 if no numbers are present in the string
  *        -1 on error
  */
 void print_error(info_t *info, char *estr)
@@ -113,7 +113,7 @@ int _erratoi(char *s)
 {
 	int i = 0;
 	unsigned long int result = 0;
-	
+
 	if (*s == '+')
 	s++;  /* TODO: reason the main returns 255? */
 	for (i = 0;  s[i] != '\0'; i++)
@@ -122,7 +122,7 @@ int _erratoi(char *s)
 	{
 	result *= 10;
 	result += (s[i] - '0');
-		
+
 	if (result > INT_MAX)
 	return (-1);
 	}
