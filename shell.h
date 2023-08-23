@@ -77,7 +77,7 @@ typedef struct passinfo
 	char **argv;
 	char *path;
 	int argc;
-        list_t *history;
+list_t *history;
 	list_t *alias;
 	char **environ;
 	int env_changed;
@@ -91,14 +91,14 @@ typedef struct passinfo
 	int linecount_flag;
 	char *fname;
 	list_t *env;
-	
+
 } info_t;
 #define INFO_INIT \
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
 		0, 0, 0}
 
 /**
- * struct builtin - Structure containing a builtin command string and its related function
+ * struct builtin - Structure containing a builtin command string
  * @type: The builtin command flag
  * @func: The associated function
  */
