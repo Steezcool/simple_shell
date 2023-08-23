@@ -8,6 +8,7 @@
 ssize_t get_node_index(list_t *head, list_t *node)
 {
 	size_t i = 0;
+
 	while (head)
 	{
 	if (head == node)
@@ -25,6 +26,7 @@ ssize_t get_node_index(list_t *head, list_t *node)
 size_t print_list(const list_t *h)
 {
 	size_t i = 0;
+
 	while (h)
 	{
 	_puts(convert_number(h->num, 10, 0));
@@ -38,7 +40,7 @@ size_t print_list(const list_t *h)
 	return (i);
 }
 /**
- * list_to_strings - This function Converts the 'str' elements of a linked list into an array of strings
+ * list_to_strings - This function Converts the strings
  * @head: Pointer to the first node
  * Return: An array of strings
  */
@@ -48,6 +50,7 @@ char **list_to_strings(list_t *head)
 	size_t i = list_len(head), j;
 	char **strs;
 	char *str;
+
 	if (!head || !i)
 	return (NULL);
 	strs = malloc(sizeof(char *) * (i + 1));
@@ -68,9 +71,10 @@ char **list_to_strings(list_t *head)
 	}
 	strs[i] = NULL;
 	return (strs);
+
 }
 /**
- * node_starts_with - Retrieves the node whose string begins with the specified prefix
+ * node_starts_with - Retrieves the node
  * @node: Pointer to the list head
  * @prefix: Prefix to match
  * @c: The next character after the prefix to match
@@ -79,6 +83,7 @@ char **list_to_strings(list_t *head)
 list_t *node_starts_with(list_t *node, char *prefix, char c)
 {
 	char *p = NULL;
+
 	while (node)
 	{
 	p = starts_with(node->str, prefix);
@@ -96,6 +101,7 @@ list_t *node_starts_with(list_t *node, char *prefix, char c)
 size_t list_len(const list_t *h)
 {
 	size_t i = 0;
+
 	while (h)
 	{
 	h = h->next;
