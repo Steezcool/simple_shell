@@ -9,6 +9,7 @@ int _mycd(info_t *info)
 {
 	char *s, *dir, buffer[1024];
 	int chdir_ret;
+
 	s = getcwd(buffer, 1024);
 	if (!s)
 	_puts("TODO: >>getcwd failure emsg here<<\n");
@@ -49,13 +50,14 @@ int _mycd(info_t *info)
 }
 /**
  * _myexit - this funtion quits the shell
- * @info: potential arguments structure that are used to maintain constant function prototype.
+ * @info: potential arguments structure
  * Return: quits with a given exit status
  * (0) if info.argv[0] != "exit"
  */
 int _myexit(info_t *info)
 {
 	int exitcheck;
+
 	if (info->argv[1]) /* If exit argument is present*/
 	{
 		exitcheck = _erratoi(info->argv[1]);
@@ -75,12 +77,13 @@ int _myexit(info_t *info)
 }
 /**
  * _myhelp - this function to change the current directory of processes
- * @info: potential arguments structure that are used to maintain constant function prototype.
+ * @info: potential arguments stracture
  * Return: Always 0
  */
 int _myhelp(info_t *info)
 {
 	char **arg_array;
+
 	arg_array = info->argv;
 	_puts("help call works. Function not yet implemented \n");
 	if (0)
