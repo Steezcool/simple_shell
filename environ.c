@@ -1,13 +1,14 @@
 #include "shell.h"
 /**
  * populate_env_list - Fills an environment linked list
- * @info: A structure holding possible arguments, ensuring a consistent function prototype
+ * @info: A structure holding possible arguments
  * Return: Always returns 0
  */
 int populate_env_list(info_t *info)
 {
 	list_t *node = NULL;
 	size_t i;
+
 	for (i = 0; environ[i]; i++)
 	add_node_end(&node, environ[i], 0);
 	info->env = node;
@@ -15,7 +16,7 @@ int populate_env_list(info_t *info)
 }
 /**
  * _getenv - Retrieves the value of an environment variable
- * @info: A structure holding possible arguments, ensuring a consistent function prototype
+ * @info: A structure holding possible arguments
  * @name: The name of the environment variable
  * Return: The value of the environment variable
  */
@@ -23,6 +24,7 @@ char *_getenv(info_t *info, const char *name)
 {
 	list_t *node = info->env;
 	char *p;
+
 	while (node)
 	{
 	p = starts_with(node->str, name);
@@ -34,7 +36,7 @@ char *_getenv(info_t *info, const char *name)
 }
 /**
  * _myenv - Displays the current environment variables
- * @info: A structure holding possible arguments, ensuring a consistent function prototype
+ * @info: A structure holding possible arguments
  * Return: Always returns 0
  */
 int _myenv(info_t *info)
@@ -43,8 +45,8 @@ int _myenv(info_t *info)
 	return (0);
 }
 /**
- * _mysetenv - Initializes a new environment variable or modifies an existing one
- * @info: A structure holding possible arguments, ensuring a consistent function prototype
+ * _mysetenv - Initializes or modifies an existing one
+ * @info: A structure holding possible arguments,
  * Return: Always returns 0
  */
 int _mysetenv(info_t *info)
@@ -60,12 +62,13 @@ int _mysetenv(info_t *info)
 }
 /**
  * _myunsetenv - Deletes an environment variable
- * @info: A structure holding possible arguments, ensuring a consistent function prototype
+ * @info: A structure holding possible arguments
  * Return: Always returns 0
  */
 int _myunsetenv(info_t *info)
 {
 	int i;
+
 	if (info->argc == 1)
 	{
 	_eputs("Too few arguments.\n");
